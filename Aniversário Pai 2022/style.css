@@ -416,5 +416,5 @@ body {
 }
 
 .freeze * {
-    animation: none;
+    animation: none !important;
 }
