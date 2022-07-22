@@ -34,7 +34,6 @@ showBirthday.addEventListener('click', () => {
         left: 0,
         behavior: 'smooth'
     });
-    showFireworks();
 });
 
 const txt = query('.bg-img h1');
@@ -65,8 +64,10 @@ confetti.render();
 
 const audio = query('audio');
 
-audio.currentTime = 6;
+audio.currentTime = 7;
 
 let hasStarted = false;
-audio.addEventListener('canplaythrough', () => body.addEventListener('click', () => (hasStarted ? null: (console.log('click!'), audio.play(), body.classList.remove('freeze'), animation.add({scale: 1, duration: 1e3, delay: anime.stagger(50, {start: 3e3}), opacity: 1}), hasStarted = true)), false));
-body.addEventListener('load', () => (body.click(), console.log('loaded')), false);
+
+const fullBodyClick = () => bodyClick(hasStarted, audio, body, animation);
+
+audio.addEventListener('canplaythrough', () => addListenerEvents(body, fullBodyClick, 'click', 'keypress'));
