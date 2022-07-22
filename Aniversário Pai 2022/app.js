@@ -68,4 +68,4 @@ const audio = query('audio');
 audio.currentTime = 6;
 
 let hasStarted = false;
-audio.addEventListener('canplaythrough', () => document.addEventListener('click', () => (audio.play, body.classList.remove('freeze'), animation.add({scale: 1, duration: 1e3, delay: anime.stagger(50, {start: 3e3}), opacity: 1})), false));
+audio.addEventListener('canplaythrough', () => document.addEventListener('click', () => (hasStarted ? null: (audio.play(), body.classList.remove('freeze'), animation.add({scale: 1, duration: 1e3, delay: anime.stagger(50, {start: 3e3}), opacity: 1}), hasStarted = true)), false));
