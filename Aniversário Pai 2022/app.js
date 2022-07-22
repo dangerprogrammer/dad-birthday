@@ -72,4 +72,6 @@ confetti.render();
 const audio = query('audio');
 
 audio.currentTime = 6;
-body.addEventListener('mousemove', audio.play);
+
+let hasStarted = false;
+audio.addEventListener('canplaythrough', () => body.addEventListener('mousemove', audio.play, false));
