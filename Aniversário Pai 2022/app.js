@@ -56,7 +56,7 @@ animation
 
 const confettiSettings = {
     target: 'my-canvas',
-    max: 200
+    max: 300
 };
 
 const confetti = new ConfettiGenerator(confettiSettings);
@@ -68,6 +68,6 @@ audio.currentTime = 7;
 
 let hasStarted = false;
 
-const fullBodyClick = () => bodyClick(hasStarted, audio, body, animation);
+const fullBodyClick = () => (bodyClick(hasStarted, audio, body, animation), hasStarted = true);
 
 audio.addEventListener('canplaythrough', () => addListenerEvents(body, fullBodyClick, 'click', 'keypress'));
