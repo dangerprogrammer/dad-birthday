@@ -53,12 +53,6 @@ animation
     scale: 5,
     duration: 0,
     opacity: 0
-})
-.add({
-    scale: 1,
-    duration: 1e3,
-    delay: anime.stagger(50, {start: 3e3}),
-    opacity: 1
 });
 
 const confettiSettings = {
@@ -74,4 +68,4 @@ const audio = query('audio');
 audio.currentTime = 6;
 
 let hasStarted = false;
-audio.addEventListener('canplaythrough', () => document.addEventListener('click', () => (audio.play, body.classList.remove('freeze')), false));
+audio.addEventListener('canplaythrough', () => document.addEventListener('click', () => (audio.play, body.classList.remove('freeze'), animation.add({scale: 1, duration: 1e3, delay: anime.stagger(50, {start: 3e3}), opacity: 1})), false));
