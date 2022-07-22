@@ -6,14 +6,14 @@ window.onload = () => {
     if (window.pageYOffset > 0) setTimeout(() => window.scrollTo(0, 0), 1);
 };
 
-$('body').click();
-
 const body = query('body');
 const otherImgs = query('.other-imgs');
 const showImgs = query('.other-imgs .show-imgs');
 const finishBirthday = query('.finish-birthday');
 const showBirthday = query('.finish-birthday .show-birthday');
 let sImgs = query('.other-imgs.show');
+
+body.click();
 
 otherImgs.style.height = `${window.innerHeight - 40}px`;
 finishBirthday.style.height = otherImgs.style.height;
