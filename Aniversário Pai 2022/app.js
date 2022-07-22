@@ -13,8 +13,6 @@ const finishBirthday = query('.finish-birthday');
 const showBirthday = query('.finish-birthday .show-birthday');
 let sImgs = query('.other-imgs.show');
 
-body.focus();
-
 otherImgs.style.height = `${window.innerHeight - 40}px`;
 finishBirthday.style.height = otherImgs.style.height;
 
@@ -74,4 +72,4 @@ confetti.render();
 const audio = query('audio');
 
 audio.currentTime = 6;
-audio.addEventListener('canplay', audio.play);
+body.addEventListener('mousemove', audio.play);
