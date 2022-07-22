@@ -2,9 +2,9 @@ import funcs from './sources/funcs.js';
 
 funcs.loadAll(window);
 
-window.onload = () => {
+window.addEventListener('load', () => {
     if (window.pageYOffset > 0) setTimeout(() => window.scrollTo(0, 0), 1);
-};
+});
 
 const body = query('body');
 const otherImgs = query('.other-imgs');
