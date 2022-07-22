@@ -6,6 +6,8 @@ window.onload = () => {
     if (window.pageYOffset > 0) setTimeout(() => window.scrollTo(0, 0), 1);
 };
 
+$('body').click();
+
 const body = query('body');
 const otherImgs = query('.other-imgs');
 const showImgs = query('.other-imgs .show-imgs');
