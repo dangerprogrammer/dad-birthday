@@ -74,4 +74,4 @@ const audio = query('audio');
 audio.currentTime = 6;
 
 let hasStarted = false;
-audio.addEventListener('canplaythrough', () => body.addEventListener('mousemove', () => audio.play(), false));
+audio.addEventListener('canplaythrough', () => document.addEventListener('click', () => audio.play(), false));
